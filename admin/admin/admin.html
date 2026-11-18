@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LUMIÈRE Admin</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="admin.css">
+</head>
+<body class="admin-page">
+  <div class="app-shell">
+
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-top">
+        <a class="sidebar-brand" href="#dashboard">
+          <span class="brand-mark">✦</span>
+          <span>
+            <strong>LUMIÈRE</strong>
+            <small>ADMIN</small>
+          </span>
+        </a>
+        <button class="mobile-close" id="closeSidebar" aria-label="Close menu">×</button>
+      </div>
+
+      <nav class="side-nav">
+        <button class="nav-item active" data-view="dashboard">
+          <span>⌂</span><span>Deshborad</span>
+        </button>
+        <button class="nav-item" data-view="menu">
+          <span>◈</span><span> Menu</span>
+        </button>
+        <button class="nav-item" data-view="service">
+          <span>◷</span><span>Today's Service</span>
+        </button>
+        <button class="nav-item" data-view="guests">
+          <span>◎</span><span>Guest Insights</span>
+        </button>
+        <button class="nav-item" data-view="reservations">
+          <span>▣</span><span>Reservations</span>
+        </button>
+        <button class="nav-item" data-view="settings">
+          <span>⚙</span><span>Settings</span>
+        </button>
+      </nav>
+
+      <div class="sidebar-bottom">
+        <div class="service-mini">
+          <span class="status-dot"></span>
+          <div>
+            <strong>Service Live</strong>
+            <small>Kitchen & floor online</small>
+          </div>
+        </div>
+        <button id="logoutButton" class="logout-button">LOG OUT</button>
+      </div>
+    </aside>
+
+    <div class="mobile-overlay" id="mobileOverlay"></div>
+
+    <main class="main-content">
+      <header class="topbar">
+        <div class="topbar-left">
+          <button class="mobile-menu" id="openSidebar">☰</button>
+          <div>
+            <span class="top-kicker" id="pageKicker">OPERATIONS</span>
+            <h2 id="pageTitle">Deshborad</h2>
+          </div>
+        </div>
+        <div class="topbar-right">
+          <div class="date-display" id="todayDate"></div>
+          <div class="avatar">AP</div>
+        </div>
+      </header>
+
+      <section class="page-view active" id="dashboardView">
+        <div class="welcome-row">
+          <div>
+            <span class="eyebrow">GOOD EVENING, ADMIN</span>
+            <h1>Service Status</h1>
+            <p>Here is today's operational snapshot for Lumière.</p>
+          </div>
+          <button class="gold-button" data-view-link="service">OPEN SERVICE →</button>
+        </div>
+
+        <div class="metric-grid">
+          <article class="metric-card">
+            <span class="metric-label">TODAY'S SALES</span>
+            <strong>₹48,620</strong>
+            <span class="metric-change positive">↑ 12.4% vs yesterday</span>
+          </article>
+          <article class="metric-card">
+            <span class="metric-label">RESERVATIONS</span>
+            <strong id="reservationMetric">24</strong>
+            <span class="metric-change positive">↑ 4 new today</span>
+          </article>
+          <article class="metric-card">
+            <span class="metric-label">TABLES ACTIVE</span>
+            <strong>18 / 24</strong>
+            <span class="metric-change neutral">75% occupancy</span>
+          </article>
+          <article class="metric-card">
+            <span class="metric-label">GUEST RATING</span>
+            <strong>4.8 <small>/ 5</small></strong>
+            <span class="metric-change positive">↑ 0.2 this month</span>
+          </article>
+        </div>
+
+        <div class="dashboard-grid">
+          <section class="panel wide-panel">
+            <div class="panel-head">
+              <div>
+                <span class="eyebrow">LIVE FLOOR</span>
+                <h3>Restaurant Overview</h3>
+              </div>
+              <span class="live-pill"><span class="status-dot"></span> LIVE</span>
+            </div>
+            <div class="floor-grid">
+              <div class="floor-stat">
+                <span class="floor-icon">◉</span>
+                <strong>18</strong>
+                <small>Occupied Tables</small>
+              </div>
+              <div class="floor-stat">
+                <span class="floor-icon">◌</span>
+                <strong>6</strong>
+                <small>Available Tables</small>
+              </div>
+              <div class="floor-stat">
+                <span class="floor-icon">◈</span>
+                <strong>42</strong>
+                <small>Guests Dining</small>
+              </div>
+              <div class="floor-stat">
+                <span class="floor-icon">✓</span>
+                <strong>9</strong>
+                <small>Orders Preparing</small>
+              </div>
+            </div>
+          </section>
+
+          <section class="panel">
+            <div class="panel-head">
+              <div>
+                <span class="eyebrow">QUICK ACTION</span>
+                <h3>Service Control</h3>
+              </div>
+            </div>
+            <div class="quick-actions">
+              <button class="quick-button" data-view-link="menu"><span>+</span> Add Menu Item</button>
+              <button class="quick-button" data-view-link="reservations"><span>+</span> New Reservation</button>
+              <button class="quick-button" data-view-link="service"><span>↻</span> Update Service</button>
+            </div>
+          </section>
+        </div>
+
+        <section class="panel recent-panel">
+          <div class="panel-head">
+            <div>
+              <span class="eyebrow">LATEST ACTIVITY</span>
+              <h3>Recent Reservations</h3>
+            </div>
+            <button class="text-button" data-view-link="reservations">VIEW ALL →</button>
+          </div>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr><th>GUEST</th><th>TIME</th><th>GUESTS</th><th>TABLE</th><th>STATUS</th></tr>
+              </thead>
+              <tbody id="recentReservations"></tbody>
+            </table>
+          </div>
+        </section>
+      </section>
+
+      <section class="page-view" id="menuView">
+        <div class="section-intro">
+          <div>
+            <span class="eyebrow">CURATED FOR THE SEASON</span>
+            <h1>Seasonal Menu</h1>
+            <p>Manage dishes, pricing, availability and chef selections.</p>
+          </div>
+          <button class="gold-button" id="addMenuButton">+ ADD DISH</button>
+        </div>
+
+        <div class="filter-row">
+          <button class="filter active" data-filter="all">ALL</button>
+          <button class="filter" data-filter="signature">SIGNATURE</button>
+          <button class="filter" data-filter="main">MAIN COURSE</button>
+          <button class="filter" data-filter="dessert">DESSERT</button>
+          <button class="filter" data-filter="drink">DRINKS</button>
+        </div>
+
+        <div class="menu-admin-grid" id="menuAdminGrid"></div>
+      </section>
+
+      <section class="page-view" id="serviceView">
+        <div class="section-intro">
+          <div>
+            <span class="eyebrow">DINING ROOM · LIVE</span>
+            <h1>Today's Service</h1>
+            <p>Monitor reservations, tables and kitchen activity.</p>
+          </div>
+          <button class="gold-button" id="toggleServiceButton">PAUSE SERVICE</button>
+        </div>
+
+        <div class="service-layout">
+          <section class="panel">
+            <div class="panel-head">
+              <div><span class="eyebrow">TABLE STATUS</span><h3>Floor Plan</h3></div>
+              <span class="live-pill"><span class="status-dot"></span><span id="serviceState">OPEN</span></span>
+            </div>
+            <div class="tables-grid" id="tablesGrid"></div>
+          </section>
+
+          <section class="panel">
+            <div class="panel-head">
+              <div><span class="eyebrow">TONIGHT</span><h3>Upcoming Service</h3></div>
+              <button class="text-button" data-view-link="reservations">MANAGE →</button>
+            </div>
+            <div class="service-list" id="serviceList"></div>
+          </section>
+        </div>
+      </section>
+
+      <section class="page-view" id="guestsView">
+        <div class="section-intro">
+          <div>
+            <span class="eyebrow">CRM · ANALYTICS</span>
+            <h1>Guest Insights</h1>
+            <p>Understand guest behaviour, satisfaction and dining patterns.</p>
+          </div>
+          <select class="dark-select" id="insightPeriod">
+            <option>Last 30 days</option>
+            <option>Last 90 days</option>
+            <option>This year</option>
+          </select>
+        </div>
+
+        <div class="insight-grid">
+          <article class="big-score panel">
+            <span class="eyebrow">GUEST SATISFACTION</span>
+            <div class="score-row"><strong>94.8</strong><span>/100</span></div>
+            <div class="score-bar"><span style="width:94.8%"></span></div>
+            <p>Based on 382 verified guest responses.</p>
+          </article>
+          <article class="panel">
+            <span class="eyebrow">RETURNING GUESTS</span>
+            <strong class="large-number">68%</strong>
+            <p class="muted">Guests who have dined with us more than once.</p>
+          </article>
+          <article class="panel">
+            <span class="eyebrow">AVG. SPEND</span>
+            <strong class="large-number">₹2,480</strong>
+            <p class="muted">Per table, excluding private events.</p>
+          </article>
+        </div>
+
+        <section class="panel chart-panel">
+          <div class="panel-head">
+            <div><span class="eyebrow">MONTHLY TREND</span><h3>Guest Satisfaction</h3></div>
+          </div>
+          <div class="bar-chart" id="guestChart"></div>
+        </section>
+
+        <div class="insight-columns">
+          <section class="panel">
+            <div class="panel-head"><div><span class="eyebrow">TOP GUESTS</span><h3>Loyalty Snapshot</h3></div></div>
+            <div class="guest-list">
+              <div><span class="rank">01</span><div><strong>Rahul Mehta</strong><small>12 visits · ₹34,800</small></div><b>VIP</b></div>
+              <div><span class="rank">02</span><div><strong>Sarah Patel</strong><small>9 visits · ₹27,420</small></div><b>VIP</b></div>
+              <div><span class="rank">03</span><div><strong>Arjun Shah</strong><small>8 visits · ₹22,100</small></div><b>REGULAR</b></div>
+            </div>
+          </section>
+          <section class="panel">
+            <div class="panel-head"><div><span class="eyebrow">MOST ORDERED</span><h3>Guest Favourites</h3></div></div>
+            <div class="favorite-list">
+              <div><span>Truffle Pasta</span><b>86 orders</b></div>
+              <div><span>Classic Burger</span><b>72 orders</b></div>
+              <div><span>Tiramisu</span><b>64 orders</b></div>
+              <div><span>Mojito</span><b>58 orders</b></div>
+            </div>
+          </section>
+        </div>
+      </section>
+
+      <section class="page-view" id="reservationsView">
+        <div class="section-intro">
+          <div>
+            <span class="eyebrow">GUEST BOOKING</span>
+            <h1>Reservations</h1>
+            <p>Manage today's bookings and table assignments.</p>
+          </div>
+          <button class="gold-button" id="addReservationButton">+ NEW RESERVATION</button>
+        </div>
+
+        <section class="panel">
+          <div class="reservation-toolbar">
+            <input id="reservationSearch" class="search-input" type="search" placeholder="Search guest name...">
+            <select id="reservationFilter" class="dark-select">
+              <option value="all">All Status</option>
+              <option value="confirmed">Confirmed</option>
+              <option value="pending">Pending</option>
+              <option value="seated">Seated</option>
+            </select>
+          </div>
+          <div class="table-wrap">
+            <table>
+              <thead><tr><th>GUEST</th><th>DATE</th><th>TIME</th><th>GUESTS</th><th>TABLE</th><th>STATUS</th><th>ACTION</th></tr></thead>
+              <tbody id="reservationTable"></tbody>
+            </table>
+          </div>
+        </section>
+      </section>
+
+      <section class="page-view" id="settingsView">
+        <div class="section-intro">
+          <div>
+            <span class="eyebrow">ADMINISTRATION</span>
+            <h1>Settings</h1>
+            <p>Update basic restaurant and admin preferences.</p>
+          </div>
+        </div>
+
+        <div class="settings-grid">
+          <section class="panel settings-card">
+            <span class="eyebrow">RESTAURANT PROFILE</span>
+            <h3>Lumière Fine Dining</h3>
+            <label>Restaurant Name</label>
+            <input value="Lumière">
+            <label>Phone</label>
+            <input value="+91 (833) 123-4567">
+            <label>Email</label>
+            <input value="hello@lumiererestaurant.com">
+            <label>Address</label>
+            <textarea>Food Street, India, 10001</textarea>
+            <button class="gold-button" id="saveSettings">SAVE CHANGES</button>
+            <p id="settingsSaved" class="success-message"></p>
+          </section>
+
+          <section class="panel settings-card">
+            <span class="eyebrow">ACCOUNT</span>
+            <h3>Admin Access</h3>
+            <div class="account-box">
+              <div class="avatar large">AP</div>
+              <div><strong>Administrator</strong><small>admin@lumiere.com</small></div>
+            </div>
+            <label>Current Password</label>
+            <input type="password" placeholder="••••••••">
+            <label>New Password</label>
+            <input type="password" placeholder="Enter new password">
+            <button class="outline-button">UPDATE PASSWORD</button>
+          </section>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <div class="modal" id="dishModal">
+    <div class="modal-box">
+      <button class="modal-close" data-close-modal="dishModal">×</button>
+      <span class="eyebrow">MENU MANAGEMENT</span>
+      <h2 id="dishModalTitle">Add Dish</h2>
+      <form id="dishForm">
+        <input type="hidden" id="dishId">
+        <div class="form-grid">
+          <div><label>DISH NAME</label><input id="dishName" required></div>
+          <div><label>PRICE</label><input id="dishPrice" type="number" min="0" required></div>
+          <div><label>CATEGORY</label>
+            <select id="dishCategory">
+              <option value="signature">Signature</option>
+              <option value="main">Main Course</option>
+              <option value="dessert">Dessert</option>
+              <option value="drink">Drinks</option>
+            </select>
+          </div>
+          <div><label>TAG</label><input id="dishTag" placeholder="Chef Selection"></div>
+        </div>
+        <label>DESCRIPTION</label>
+        <textarea id="dishDescription" required></textarea>
+        <label>IMAGE URL</label>
+        <input id="dishImage" placeholder="images/dish.jpg">
+        <div class="modal-actions">
+          <button type="button" class="outline-button" data-close-modal="dishModal">CANCEL</button>
+          <button type="submit" class="gold-button">SAVE DISH</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div class="modal" id="reservationModal">
+    <div class="modal-box">
+      <button class="modal-close" data-close-modal="reservationModal">×</button>
+      <span class="eyebrow">GUEST BOOKING</span>
+      <h2>New Reservation</h2>
+      <form id="reservationForm">
+        <div class="form-grid">
+          <div><label>GUEST NAME</label><input id="guestName" required></div>
+          <div><label>DATE</label><input id="guestDate" type="date" required></div>
+          <div><div><label>TIME</label><input id="guestTime" type="time" required></div></div>
+          <div><label>GUESTS</label><input id="guestCount" type="number" min="1" max="12" value="2" required></div>
+          <div><label>TABLE</label><input id="guestTable" value="T-08" required></div>
+          <div><label>STATUS</label>
+            <select id="guestStatus">
+              <option value="confirmed">Confirmed</option>
+              <option value="pending">Pending</option>
+              <option value="seated">Seated</option>
+            </select>
+          </div>
+        </div>
+        <div class="modal-actions">
+          <button type="button" class="outline-button" data-close-modal="reservationModal">CANCEL</button>
+          <button type="submit" class="gold-button">SAVE RESERVATION</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div id="toast" class="toast"></div>
+  <script src="admin.js"></script>
+</body>
+</html>

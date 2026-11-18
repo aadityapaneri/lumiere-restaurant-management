@@ -1,0 +1,2154 @@
+/* =========================================================
+   LUMIÈRE RESTAURANT
+   Premium Fine Dining Website
+   ========================================================= */
+
+
+/* ================= GOOGLE FONTS ================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap');
+
+
+/* ================= RESET ================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #11120f;
+    color: #27231e;
+    line-height: 1.6;
+}
+
+img {
+    width: 100%;
+    display: block;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+button {
+    font-family: inherit;
+    cursor: pointer;
+}
+
+
+
+
+/* ================= VARIABLES ================= */
+
+:root {
+
+    --black: #11120f;
+    --dark: #1c1d19;
+    --dark-card: #23241f;
+
+    --cream: #f5efe4;
+    --cream-dark: #eae1d1;
+
+    --pink: #ead5cf;
+    --pink-light: #f2dfda;
+
+    --gold: #dcb52d;
+    --gold-light: #f0c940;
+
+    --text: #302b26;
+    --muted: #766e65;
+
+    --white: #ffffff;
+
+}
+
+
+/* ================= HEADER ================= */
+
+.header {
+
+    min-height: 90px;
+
+    padding: 0 8%;
+
+    background: #10110e;
+
+    color: #d9d0c3;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    position: relative;
+
+    z-index: 10;
+
+}
+
+
+.logo-box {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 28px;
+
+}
+
+
+.logo {
+
+    font-family: 'Cormorant Garamond', serif;
+
+    color: var(--gold);
+
+    font-size: 28px;
+
+    letter-spacing: 3px;
+
+}
+
+
+.logo-small {
+
+    font-size: 8px;
+
+    letter-spacing: 3px;
+
+    color: var(--gold);
+
+}
+
+
+nav {
+
+    display: flex;
+
+    gap: 30px;
+
+}
+
+
+nav a {
+
+    color: #aaa298;
+
+    font-size: 12px;
+
+    transition: .3s;
+
+}
+
+
+nav a:hover,
+nav a.active {
+
+    color: var(--gold);
+
+}
+
+
+.header-icons {
+
+    display: flex;
+
+    gap: 22px;
+
+    color: #c7beb0;
+
+}
+
+
+.header-icons i {
+
+    cursor: pointer;
+
+    transition: .3s;
+
+}
+
+
+.header-icons i:hover {
+
+    color: var(--gold);
+
+}
+
+
+/* ================= COMMON ================= */
+
+.eyebrow {
+
+    color: var(--gold);
+
+    font-size: 10px;
+
+    letter-spacing: 3px;
+
+    font-weight: 600;
+
+}
+
+
+h1,
+h2,
+h3 {
+
+    font-family: 'Cormorant Garamond', serif;
+
+}
+
+
+h2 {
+
+    font-size: 42px;
+
+    line-height: 1.1;
+
+}
+
+
+.gold-btn {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background: linear-gradient(
+        90deg,
+        var(--gold),
+        var(--gold-light)
+    );
+
+    color: #29240e;
+
+    padding: 15px 30px;
+
+    font-size: 11px;
+
+    font-weight: 600;
+
+    letter-spacing: 1px;
+
+    border: none;
+
+    transition: .3s;
+
+}
+
+
+.gold-btn:hover {
+
+    transform: translateY(-3px);
+
+    box-shadow: 0 10px 25px rgba(220,181,45,.25);
+
+}
+
+
+.dark-btn {
+
+    display: block;
+
+    width: 100%;
+
+    background: #30302c;
+
+    color: #eee7db;
+
+    border: none;
+
+    padding: 11px;
+
+    text-align: center;
+
+    font-size: 10px;
+
+    letter-spacing: 1px;
+
+    transition: .3s;
+
+}
+
+
+.dark-btn:hover {
+
+    background: #191a17;
+
+}
+
+
+.outline-btn {
+
+    border: 1px solid #3b3b36;
+
+    color: #eee7db;
+
+    padding: 14px 25px;
+
+    font-size: 10px;
+
+    letter-spacing: 1px;
+
+}
+
+
+.text-btn {
+
+    color: #4c463f;
+
+    font-size: 10px;
+
+    font-weight: 600;
+
+    letter-spacing: 1px;
+
+}
+
+
+/* =========================================================
+   HOME PAGE
+   ========================================================= */
+
+
+/* ================= HERO ================= */
+
+.hero {
+
+    min-height: 650px;
+
+    position: relative;
+
+    background-image:
+        url("https://images.unsplash.com/photo-1515003197210-e0cd71810b5f?auto=format&fit=crop&w=1800&q=80");
+
+    background-size: cover;
+
+    background-position: center;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    overflow: hidden;
+
+}
+
+
+.hero-overlay {
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            rgba(10,10,8,.72),
+            rgba(10,10,8,.88)
+        );
+
+}
+
+
+.hero-content {
+
+    position: relative;
+
+    z-index: 2;
+
+    text-align: center;
+
+    color: white;
+
+}
+
+
+.hero-content h1 {
+
+    font-size: 62px;
+
+    margin: 20px 0 5px;
+
+}
+
+
+.hero-content p {
+
+    color: #cfc5b7;
+
+    margin-bottom: 28px;
+
+    font-size: 14px;
+
+}
+
+
+.hero-food {
+
+    position: relative;
+
+    z-index: 2;
+
+    width: 450px;
+
+    margin-top: 35px;
+
+}
+
+
+.hero-food img {
+
+    height: 280px;
+
+    object-fit: cover;
+
+    border-radius: 16px;
+
+    box-shadow: 0 25px 50px rgba(0,0,0,.5);
+
+}
+
+
+/* ================= SIGNATURE ================= */
+
+.signature-section {
+
+    max-width: 1200px;
+
+    margin: 70px auto;
+
+    padding: 65px;
+
+    background: var(--pink);
+
+    border-radius: 15px;
+
+}
+
+
+.section-heading {
+
+    text-align: center;
+
+    margin-bottom: 45px;
+
+}
+
+
+.section-heading h2 {
+
+    margin-bottom: 10px;
+
+}
+
+
+.gold-symbol {
+
+    color: var(--gold);
+
+}
+
+
+.signature-grid {
+
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 28px;
+
+}
+
+
+.dish-card {
+
+    background: #dfccc7;
+
+    overflow: hidden;
+
+    border-radius: 5px;
+
+    box-shadow: 0 8px 20px rgba(0,0,0,.12);
+
+}
+
+
+.dish-card img {
+
+    height: 210px;
+
+    object-fit: cover;
+
+}
+
+
+.dish-content {
+
+    padding: 18px;
+
+}
+
+
+.dish-content h3 {
+
+    font-size: 19px;
+
+}
+
+
+.dish-content p {
+
+    font-size: 12px;
+
+    color: #766b63;
+
+    margin: 3px 0 7px;
+
+}
+
+
+.dish-content strong {
+
+    display: block;
+
+    color: #8f761a;
+
+    font-family: 'Cormorant Garamond', serif;
+
+    font-size: 17px;
+
+    margin-bottom: 8px;
+
+}
+
+
+/* ================= FEATURES ================= */
+
+.features {
+
+    margin-top: 55px;
+
+    padding-top: 40px;
+
+    border-top: 1px solid rgba(80,70,60,.15);
+
+    display: grid;
+
+    grid-template-columns: repeat(3,1fr);
+
+    text-align: center;
+
+}
+
+
+.feature-icon {
+
+    width: 42px;
+
+    height: 42px;
+
+    margin: auto;
+
+    border-radius: 9px;
+
+    background: #dfccc7;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+}
+
+
+.feature-icon i {
+
+    color: #403a35;
+
+}
+
+
+.feature h3 {
+
+    font-size: 17px;
+
+    margin-top: 12px;
+
+}
+
+
+.feature p {
+
+    color: #827870;
+
+    font-size: 11px;
+
+}
+
+
+/* ================= RESERVATION ================= */
+
+.reservation {
+
+    max-width: 1200px;
+
+    margin: 70px auto;
+
+    padding: 45px;
+
+    background: #20211d;
+
+    color: #eee7dc;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    gap: 40px;
+
+}
+
+
+.reservation h2 {
+
+    font-size: 32px;
+
+    margin: 8px 0;
+
+}
+
+
+.reservation p {
+
+    color: #aaa399;
+
+    font-size: 12px;
+
+    max-width: 600px;
+
+}
+
+
+.reservation-buttons {
+
+    display: flex;
+
+    gap: 12px;
+
+    flex-shrink: 0;
+
+}
+
+
+/* =========================================================
+   INNER HERO
+   ========================================================= */
+
+.inner-hero {
+
+    height: 430px;
+
+    background-size: cover;
+
+    background-position: center;
+
+    position: relative;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+}
+
+
+.about-hero {
+
+    background-image:
+        url("https://images.unsplash.com/photo-1552566626-52f8b828add9?auto=format&fit=crop&w=1800&q=80");
+
+}
+
+
+.menu-hero {
+
+    background-image:
+        url("https://images.unsplash.com/photo-1541544741938-0af808871cc0?auto=format&fit=crop&w=1800&q=80");
+
+}
+
+
+.contact-hero {
+
+    background-image:
+        url("https://images.unsplash.com/photo-1559339352-11d035aa65de?auto=format&fit=crop&w=1800&q=80");
+
+}
+
+
+.inner-overlay {
+
+    position: absolute;
+
+    inset: 0;
+
+    background: rgba(8,8,6,.72);
+
+}
+
+
+.inner-content {
+
+    position: relative;
+
+    z-index: 2;
+
+    text-align: center;
+
+    color: white;
+
+    max-width: 750px;
+
+    padding: 20px;
+
+}
+
+
+.inner-content h1 {
+
+    font-size: 58px;
+
+    margin: 15px 0 5px;
+
+}
+
+
+.inner-content p {
+
+    color: #c9c0b4;
+
+    font-size: 15px;
+
+}
+
+
+/* =========================================================
+   ABOUT PAGE
+   ========================================================= */
+
+.philosophy {
+
+    background: var(--cream);
+
+    padding: 100px 7%;
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 70px;
+
+    align-items: center;
+
+}
+
+
+.philosophy h2 {
+
+    margin: 15px 0 25px;
+
+}
+
+
+.philosophy p {
+
+    color: #716960;
+
+    font-size: 13px;
+
+    max-width: 600px;
+
+}
+
+
+.philosophy .large-text {
+
+    font-size: 14px;
+
+    margin-bottom: 18px;
+
+}
+
+
+.philosophy-buttons {
+
+    margin-top: 30px;
+
+    display: flex;
+
+    gap: 30px;
+
+    align-items: center;
+
+}
+
+
+.stats {
+
+    display: flex;
+
+    gap: 60px;
+
+    border-top: 1px solid #d8d0c3;
+
+    margin-top: 35px;
+
+    padding-top: 25px;
+
+}
+
+
+.stats strong {
+
+    display: block;
+
+    font-family: 'Cormorant Garamond', serif;
+
+    font-size: 25px;
+
+}
+
+
+.stats span {
+
+    font-size: 8px;
+
+    color: #847a70;
+
+    letter-spacing: 1px;
+
+}
+
+
+.chef-image {
+
+    position: relative;
+
+    background: #eee3d2;
+
+    padding: 12px;
+
+}
+
+
+.chef-image img {
+
+    height: 460px;
+
+    object-fit: cover;
+
+    filter: grayscale(100%);
+
+}
+
+
+.chef-caption {
+
+    position: absolute;
+
+    bottom: 25px;
+
+    left: 35px;
+
+    color: white;
+
+}
+
+
+.chef-caption span {
+
+    color: var(--gold);
+
+    font-size: 9px;
+
+    letter-spacing: 2px;
+
+}
+
+
+.chef-caption h3 {
+
+    font-size: 23px;
+
+}
+
+
+.chef-caption p {
+
+    color: white;
+
+    font-style: italic;
+
+    font-family: 'Cormorant Garamond', serif;
+
+}
+
+
+/* ================= VALUES ================= */
+
+.values-section {
+
+    background: #e8dfcf;
+
+    padding: 85px 7%;
+
+}
+
+
+.values-grid {
+
+    max-width: 1200px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns: repeat(3,1fr);
+
+    gap: 25px;
+
+}
+
+
+.value-card {
+
+    background: #f5eee2;
+
+    padding: 35px 30px;
+
+    text-align: center;
+
+}
+
+
+.value-icon {
+
+    width: 45px;
+
+    height: 45px;
+
+    margin: auto;
+
+    border-radius: 9px;
+
+    background: #e6dac4;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+}
+
+
+.value-icon i {
+
+    color: #62551f;
+
+}
+
+
+.value-card h3 {
+
+    font-size: 21px;
+
+    margin: 18px 0 10px;
+
+}
+
+
+.value-card p {
+
+    color: #70675e;
+
+    font-size: 12px;
+
+}
+
+
+.value-card span {
+
+    display: block;
+
+    margin-top: 25px;
+
+    color: #ae9334;
+
+    font-size: 8px;
+
+    letter-spacing: 2px;
+
+}
+
+
+/* ================= QUOTE ================= */
+
+.quote-section {
+
+    min-height: 380px;
+
+    background:
+        linear-gradient(rgba(10,10,8,.85),rgba(10,10,8,.92)),
+        url("https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1800&q=80");
+
+    background-size: cover;
+
+    background-position: center;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+
+    color: white;
+
+    text-align: center;
+
+}
+
+
+.quote-section > span {
+
+    color: var(--gold);
+
+    font-family: 'Cormorant Garamond', serif;
+
+    font-size: 30px;
+
+}
+
+
+.quote-section h2 {
+
+    font-size: 38px;
+
+    margin: 5px 0;
+
+}
+
+
+.quote-section p {
+
+    color: var(--gold);
+
+    letter-spacing: 4px;
+
+    font-size: 11px;
+
+    margin-bottom: 20px;
+
+}
+
+
+/* =========================================================
+   MENU PAGE
+   ========================================================= */
+
+.menu-section {
+
+    background: var(--cream);
+
+    padding: 50px 7% 80px;
+
+}
+
+
+.categories {
+
+    display: flex;
+
+    justify-content: center;
+
+    gap: 10px;
+
+    margin-bottom: 45px;
+
+    flex-wrap: wrap;
+
+}
+
+
+.categories button {
+
+    border: none;
+
+    padding: 9px 18px;
+
+    background: #e9e2d6;
+
+    color: #6e665d;
+
+    border-radius: 20px;
+
+    font-size: 9px;
+
+    font-weight: 600;
+
+}
+
+
+.categories button.selected {
+
+    background: #282722;
+
+    color: white;
+
+}
+
+
+.menu-grid {
+
+    max-width: 1200px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns: repeat(2,1fr);
+
+    gap: 35px;
+
+}
+
+
+.menu-card {
+
+    background: #eee6d8;
+
+    box-shadow: 0 5px 15px rgba(0,0,0,.08);
+
+}
+
+
+.menu-card > img {
+
+    height: 260px;
+
+    object-fit: cover;
+
+}
+
+
+.menu-info {
+
+    padding: 22px;
+
+}
+
+
+.menu-title {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+}
+
+
+.menu-title h2 {
+
+    font-size: 24px;
+
+}
+
+
+.menu-title strong {
+
+    color: #94791e;
+
+    font-family: 'Cormorant Garamond', serif;
+
+    font-size: 18px;
+
+}
+
+
+.menu-info > p {
+
+    color: #716960;
+
+    font-size: 11px;
+
+    margin: 8px 0 20px;
+
+}
+
+
+.menu-bottom {
+
+    border-top: 1px solid #d9d0c2;
+
+    padding-top: 13px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+}
+
+
+.menu-bottom span {
+
+    color: #8b8279;
+
+    font-size: 9px;
+
+    letter-spacing: 1px;
+
+}
+
+
+.menu-bottom span i {
+
+    color: #766219;
+
+    margin-right: 4px;
+
+}
+
+
+.menu-bottom button {
+
+    background: #25251f;
+
+    color: white;
+
+    border: none;
+
+    padding: 10px 17px;
+
+    border-radius: 10px;
+
+    font-size: 9px;
+
+}
+
+
+.wine-box {
+
+    max-width: 1200px;
+
+    margin: 45px auto 0;
+
+    background: #e4dac9;
+
+    padding: 22px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 18px;
+
+}
+
+
+.wine-icon {
+
+    width: 40px;
+
+    height: 40px;
+
+    background: #eee5d5;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    flex-shrink: 0;
+
+}
+
+
+.wine-box h3 {
+
+    font-size: 18px;
+
+}
+
+
+.wine-box p {
+
+    font-size: 10px;
+
+    color: #71685f;
+
+}
+
+
+.wine-box button {
+
+    margin-left: auto;
+
+    background: transparent;
+
+    border: 1px solid #b7aa97;
+
+    padding: 10px 18px;
+
+    font-size: 9px;
+
+}
+
+
+/* =========================================================
+   CONTACT PAGE
+   ========================================================= */
+
+.contact-section {
+
+    background: var(--cream);
+
+    padding: 75px 7%;
+
+    display: grid;
+
+    grid-template-columns: .8fr 1.2fr;
+
+    gap: 80px;
+
+}
+
+
+.contact-info h2 {
+
+    margin: 15px 0 40px;
+
+}
+
+
+.contact-item {
+
+    display: flex;
+
+    gap: 18px;
+
+    margin-bottom: 30px;
+
+}
+
+
+.contact-icon {
+
+    width: 38px;
+
+    height: 38px;
+
+    background: #e8dfcf;
+
+    border-radius: 10px;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    flex-shrink: 0;
+
+}
+
+
+.contact-icon i {
+
+    color: #6a5914;
+
+}
+
+
+.contact-item h3 {
+
+    font-size: 18px;
+
+}
+
+
+.contact-item p {
+
+    font-size: 12px;
+
+    color: #70685f;
+
+}
+
+
+.contact-form-box {
+
+    background: #eee5d7;
+
+    padding: 35px;
+
+    box-shadow: 0 10px 25px rgba(0,0,0,.08);
+
+}
+
+
+.contact-form-box form {
+
+    display: flex;
+
+    flex-direction: column;
+
+}
+
+
+.contact-form-box label {
+
+    font-size: 9px;
+
+    letter-spacing: 3px;
+
+    color: #645b53;
+
+    margin-bottom: 7px;
+
+}
+
+
+.contact-form-box input,
+.contact-form-box textarea {
+
+    border: none;
+
+    outline: none;
+
+    background: #f8f3eb;
+
+    padding: 15px;
+
+    margin-bottom: 20px;
+
+    font-family: inherit;
+
+    color: #333;
+
+}
+
+
+.contact-form-box textarea {
+
+    height: 120px;
+
+    resize: vertical;
+
+}
+
+
+.contact-form-box .gold-btn {
+
+    width: 100%;
+
+}
+
+/* =========================================================
+   BOOK A TABLE
+   ========================================================= */
+
+.booking-section {
+    background: #20211d;
+
+    padding: 75px 7% 80px;
+
+    color: #eee7dc;
+}
+
+
+/* ================= HEADING ================= */
+
+.booking-heading {
+    max-width: 700px;
+
+    margin: 0 auto 40px;
+
+    text-align: center;
+}
+
+.booking-heading h2 {
+    margin: 12px 0 10px;
+
+    color: #eee7dc;
+
+    font-family: 'Cormorant Garamond', serif;
+
+    font-size: 42px;
+    line-height: 1.1;
+}
+
+.booking-heading p {
+    color: #aaa399;
+
+    font-size: 12px;
+
+    line-height: 1.7;
+}
+
+
+/* ================= BOOKING BOX ================= */
+
+.booking-box {
+    width: 100%;
+    max-width: 1000px;
+
+    margin: auto;
+
+    padding: 38px;
+
+    background: #292a25;
+
+    border: 1px solid #383832;
+
+    box-shadow: 0 12px 30px rgba(0,0,0,.2);
+}
+
+
+/* ================= FORM GRID ================= */
+
+.booking-grid {
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 22px 25px;
+}
+
+
+/* ================= FIELD ================= */
+
+.booking-field {
+    display: flex;
+
+    flex-direction: column;
+}
+
+.booking-field label,
+.booking-message label {
+    margin-bottom: 8px;
+
+    color: #b7afa4;
+
+    font-size: 9px;
+
+    font-weight: 500;
+
+    letter-spacing: 2px;
+}
+
+
+/* ================= INPUTS ================= */
+
+.booking-field input,
+.booking-field select,
+.booking-message textarea {
+    width: 100%;
+
+    border: 1px solid #3d3d37;
+
+    outline: none;
+
+    background: #20211d;
+
+    color: #eee7dc;
+
+    padding: 13px 14px;
+
+    font-family: 'Poppins', sans-serif;
+
+    font-size: 11px;
+
+    transition: .25s ease;
+}
+
+.booking-field input::placeholder,
+.booking-message textarea::placeholder {
+    color: #77736d;
+}
+
+
+/* ================= FOCUS ================= */
+
+.booking-field input:focus,
+.booking-field select:focus,
+.booking-message textarea:focus {
+    border-color: #dcb52d;
+
+    box-shadow: 0 0 0 1px rgba(220,181,45,.15);
+}
+
+
+/* ================= SELECT ================= */
+
+.booking-field select {
+    cursor: pointer;
+}
+
+.booking-field select option {
+    background: #20211d;
+    color: #fff;
+}
+
+
+/* ================= MESSAGE ================= */
+
+.booking-message {
+    margin-top: 22px;
+
+    display: flex;
+
+    flex-direction: column;
+}
+
+.booking-message textarea {
+    height: 100px;
+
+    resize: vertical;
+}
+
+
+/* ================= BOOK BUTTON ================= */
+
+.booking-btn {
+    width: 100%;
+
+    margin-top: 25px;
+
+    padding: 15px;
+
+    cursor: pointer;
+}
+
+
+/* =========================================================
+   BOOKING RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+    .booking-section {
+        padding: 55px 20px 60px;
+    }
+
+    .booking-heading h2 {
+        font-size: 36px;
+    }
+
+    .booking-box {
+        padding: 25px 20px;
+    }
+
+    .booking-grid {
+        grid-template-columns: 1fr;
+
+        gap: 18px;
+    }
+
+}
+
+/* ================= MAP ================= */
+
+.map-section {
+
+    background: var(--cream);
+
+    padding: 0 7% 80px;
+
+}
+
+
+.map {
+
+    height: 370px;
+
+    position: relative;
+
+    overflow: hidden;
+
+    background:
+
+        linear-gradient(
+            rgba(220,235,235,.25),
+            rgba(220,235,235,.25)
+        ),
+
+        url("https://maps.googleapis.com/maps/api/staticmap?center=Manhattan,New+York&zoom=12&size=1200x500");
+
+    background-color: #d8e4e5;
+
+    background-size: cover;
+
+    background-position: center;
+
+}
+
+
+.map::before {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background-image:
+
+        linear-gradient(25deg,
+        transparent 45%,
+        rgba(255,255,255,.9) 46%,
+        rgba(255,255,255,.9) 47%,
+        transparent 48%),
+
+        linear-gradient(100deg,
+        transparent 45%,
+        rgba(255,255,255,.9) 46%,
+        rgba(255,255,255,.9) 47%,
+        transparent 48%);
+
+    opacity: .7;
+
+}
+
+
+.map-content {
+
+    position: absolute;
+
+    left: 50%;
+
+    top: 50%;
+
+    transform: translate(-50%,-50%);
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    gap: 10px;
+
+    z-index: 2;
+
+}
+
+
+.map-content i {
+
+    width: 45px;
+
+    height: 45px;
+
+    border-radius: 50%;
+
+    background: #292820;
+
+    color: var(--gold);
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+}
+
+
+.map-content span {
+
+    background: #292820;
+
+    color: white;
+
+    padding: 10px 18px;
+
+    font-size: 9px;
+
+    letter-spacing: 1px;
+
+}
+
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+.footer {
+
+    min-height: 140px;
+
+    background: #0e0f0c;
+
+    color: #aaa399;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding: 30px 8%;
+
+}
+
+
+.footer-logo {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 25px;
+
+}
+
+
+.footer-logo span {
+
+    color: var(--gold);
+
+    font-family: 'Cormorant Garamond', serif;
+
+    font-size: 25px;
+
+    letter-spacing: 3px;
+
+}
+
+
+.footer-logo small {
+
+    font-size: 7px;
+
+    letter-spacing: 3px;
+
+}
+
+
+.footer p {
+
+    font-size: 11px;
+
+}
+
+
+.footer-icons {
+
+    display: flex;
+
+    gap: 20px;
+
+}
+
+
+.footer-icons i {
+
+    cursor: pointer;
+
+}
+
+
+.footer-icons i:hover {
+
+    color: var(--gold);
+
+}
+
+
+/* =========================================================
+   RESPONSIVE DESIGN
+   ========================================================= */
+
+@media (max-width: 1000px) {
+
+    .header {
+
+        padding: 20px 5%;
+
+        flex-wrap: wrap;
+
+        gap: 20px;
+
+    }
+
+    nav {
+
+        order: 3;
+
+        width: 100%;
+
+        justify-content: center;
+
+        flex-wrap: wrap;
+
+    }
+
+    .signature-section {
+
+        margin: 40px 20px;
+
+        padding: 40px 25px;
+
+    }
+
+    .reservation {
+
+        margin: 40px 20px;
+
+    }
+
+    .philosophy {
+
+        padding: 60px 5%;
+
+        gap: 40px;
+
+    }
+
+    .values-section {
+
+        padding: 60px 5%;
+
+    }
+
+}
+
+
+@media (max-width: 768px) {
+
+    .logo-small {
+
+        display: none;
+
+    }
+
+    .header-icons {
+
+        display: none;
+
+    }
+
+    .hero {
+
+        min-height: 650px;
+
+    }
+
+    .hero-content h1 {
+
+        font-size: 44px;
+
+    }
+
+    .hero-food {
+
+        width: 85%;
+
+    }
+
+    .signature-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+    .features {
+
+        grid-template-columns: 1fr;
+
+        gap: 30px;
+
+    }
+
+    .reservation {
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+    }
+
+    .philosophy {
+
+        grid-template-columns: 1fr;
+
+    }
+
+    .chef-image img {
+
+        height: 400px;
+
+    }
+
+    .values-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+    .inner-content h1 {
+
+        font-size: 45px;
+
+    }
+
+    .menu-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+    .contact-section {
+
+        grid-template-columns: 1fr;
+
+        gap: 40px;
+
+    }
+
+    .wine-box {
+
+        flex-wrap: wrap;
+
+    }
+
+    .wine-box button {
+
+        margin-left: 0;
+
+    }
+
+    .footer {
+
+        flex-direction: column;
+
+        gap: 20px;
+
+        text-align: center;
+
+    }
+
+}
+
+
+@media (max-width: 480px) {
+
+    nav {
+
+        gap: 12px;
+
+    }
+
+    nav a {
+
+        font-size: 10px;
+
+    }
+
+    .hero-content h1 {
+
+        font-size: 36px;
+
+    }
+
+    .hero-food img {
+
+        height: 220px;
+
+    }
+
+    .signature-section {
+
+        padding: 35px 15px;
+
+    }
+
+    h2 {
+
+        font-size: 34px;
+
+    }
+
+    .stats {
+
+        gap: 20px;
+
+    }
+
+    .stats strong {
+
+        font-size: 20px;
+
+    }
+
+    .reservation {
+
+        padding: 30px 20px;
+
+    }
+
+    .reservation-buttons {
+
+        flex-direction: column;
+
+        width: 100%;
+
+    }
+
+    .reservation-buttons a {
+
+        text-align: center;
+
+    }
+
+    .contact-section {
+
+        padding: 50px 20px;
+
+    }
+
+    .contact-form-box {
+
+        padding: 25px 20px;
+
+    }
+
+}
