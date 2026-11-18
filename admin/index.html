@@ -4,58 +4,268 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Login - LUMIÈRE Admin</title>
+
+  <title>LUMIÈRE Admin | Sign In</title>
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
   <link
-    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Poppins:wght@400;500;600&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Poppins:wght@300;400;500;600&display=swap"
     rel="stylesheet">
-  <link rel="stylesheet" href="admin.css">
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+      background: #0b0b0b;
+      color: #f5efe4;
+      font-family: Poppins, sans-serif;
+    }
+
+    .login-wrap {
+      width: 100%;
+      max-width: 430px;
+    }
+
+    .brand {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .brand-mark {
+      display: block;
+      font-size: 30px;
+      color: #dcb52d;
+      margin-bottom: 4px;
+    }
+
+    .brand h1 {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 48px;
+      letter-spacing: 3px;
+    }
+
+    .brand p {
+      font-size: 11px;
+      letter-spacing: 4px;
+      color: #aaa;
+      margin-top: 3px;
+    }
+
+    .card {
+      background: #151515;
+      border: 1px solid #292929;
+      padding: 38px;
+      border-radius: 2px;
+      box-shadow: 0 20px 70px rgba(0, 0, 0, 0.35);
+    }
+
+    .eyebrow {
+      display: block;
+      font-size: 10px;
+      letter-spacing: 2.5px;
+      color: #dcb52d;
+      margin-bottom: 10px;
+    }
+
+    h2 {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 34px;
+      margin-bottom: 8px;
+    }
+
+    .intro {
+      color: #aaa;
+      font-size: 13px;
+      line-height: 1.7;
+      margin-bottom: 28px;
+    }
+
+    label {
+      display: block;
+      font-size: 10px;
+      letter-spacing: 1.5px;
+      margin: 0 0 8px;
+      color: #cfcfcf;
+    }
+
+    .field {
+      margin-bottom: 20px;
+    }
+
+    input {
+      width: 100%;
+      padding: 14px 15px;
+      background: #0f0f0f;
+      border: 1px solid #333;
+      color: #fff;
+      outline: none;
+      font: inherit;
+      font-size: 13px;
+    }
+
+    input:focus {
+      border-color: #dcb52d;
+    }
+
+    button {
+      width: 100%;
+      border: 0;
+      padding: 15px;
+      background: #dcb52d;
+      color: #111;
+      font: 600 11px Poppins, sans-serif;
+      letter-spacing: 2px;
+      cursor: pointer;
+      margin-top: 4px;
+    }
+
+    button:hover {
+      background: #f0c940;
+    }
+
+    .error {
+      display: none;
+      color: #e89b9b;
+      font-size: 12px;
+      margin-top: 15px;
+      text-align: center;
+    }
+
+    .demo {
+      margin-top: 22px;
+      padding: 12px;
+      background: #101010;
+      border: 1px solid #262626;
+      color: #888;
+      font-size: 11px;
+      line-height: 1.7;
+    }
+
+    .demo strong {
+      color: #dcb52d;
+    }
+
+    @media (max-width: 480px) {
+      .card {
+        padding: 28px 22px;
+      }
+
+      .brand h1 {
+        font-size: 40px;
+      }
+    }
+  </style>
 </head>
 
-<body class="login-page">
-  <main class="login-shell">
-    <div class="login-card">
-      <div class="login-brand">
-        <span class="brand-mark">✦</span>
-        <div>
-          <div class="brand-name">LUMIÈRE</div>
-          <div class="brand-subtitle">FINE DINING · ADMIN</div>
+<body>
+
+  <div class="login-wrap">
+
+    <div class="brand">
+      <span class="brand-mark">✦</span>
+
+      <h1>LUMIÈRE</h1>
+
+      <p>ADMINISTRATION</p>
+    </div>
+
+    <div class="card">
+
+      <span class="eyebrow">SECURE ACCESS</span>
+
+      <h2>Welcome Back</h2>
+
+      <p class="intro">
+        Sign in to manage your restaurant operations, menu and reservations.
+      </p>
+
+      <form id="loginForm">
+
+        <div class="field">
+          <label for="email">EMAIL</label>
+
+          <input id="email" type="email" autocomplete="username" placeholder="Enter admin email" required>
         </div>
-      </div>
 
-      <div class="login-copy">
-        <span class="eyebrow">WELCOME BACK</span>
-        <h1>Admin Login</h1>
-        <p>Manage your restaurant, menu, service and guest experience from one place.</p>
-      </div>
+        <div class="field">
+          <label for="password">PASSWORD</label>
 
-      <form id="loginForm" class="login-form">
-        <label for="email">EMAIL</label>
-        <input id="email" type="email" value="admin@lumiere.com" autocomplete="username" required>
-
-        <label for="password">PASSWORD</label>
-        <div class="password-wrap">
-          <input id="password" type="password" value="admin123" autocomplete="current-password" required>
-          <button type="button" id="togglePassword" aria-label="Show password">SHOW</button>
+          <input id="password" type="password" autocomplete="current-password" placeholder="Enter password" required>
         </div>
 
-        <label class="remember-row">
-          <input type="checkbox" id="rememberMe" checked>
-          <span>Remember me</span>
-        </label>
+        <button type="submit">
+          SIGN IN →
+        </button>
 
-        <button class="gold-button full-width" type="submit">SIGN IN →</button>
-        <p id="loginError" class="form-error"></p>
+        <p class="error" id="loginError">
+          Invalid email or password.
+        </p>
+
       </form>
 
-      <div class="login-footer">
-        <span>© 2026 Lumière</span>
-        <span>Secure Admin Panel</span>
+      <div class="demo">
+        Demo login:
+        <strong>admin@lumiere.com</strong>
+        /
+        <strong>admin123</strong>
       </div>
+
     </div>
-  </main>
-  <script src="admin.js"></script>
+
+  </div>
+
+  <script>
+
+    const loginForm = document.getElementById("loginForm");
+    const loginError = document.getElementById("loginError");
+
+    if (sessionStorage.getItem("lumiereAdminLoggedIn") === "true") {
+      window.location.replace("admin.html");
+    }
+
+    loginForm.addEventListener("submit", function (event) {
+
+      event.preventDefault();
+
+      const email =
+        document.getElementById("email").value.trim().toLowerCase();
+
+      const password =
+        document.getElementById("password").value;
+
+      if (
+        email === "admin@lumiere.com" &&
+        password === "admin123"
+      ) {
+
+        sessionStorage.setItem(
+          "lumiereAdminLoggedIn",
+          "true"
+        );
+
+        window.location.replace("admin.html");
+
+      } else {
+
+        loginError.style.display = "block";
+
+      }
+
+    });
+
+  </script>
+
 </body>
 
 </html>
